@@ -1,0 +1,642 @@
+{
+  "constraints": {
+    "total_fraction": 1,
+    "max_cost": 90,
+    "components": [
+      "a",
+      "b",
+      "c"
+    ],
+    "costs": {
+      "a": 2,
+      "b": 5,
+      "c": 1
+    }
+  },
+  "trials": [
+    {
+      "id": "t000",
+      "batch": "b0",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.1,
+        "c": 0.8
+      },
+      "status": "complete",
+      "strength": 31.299999999999997,
+      "loss": 0.094,
+      "visible_at": 0
+    },
+    {
+      "id": "t001",
+      "batch": "b0",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.1,
+        "c": 0.7000000000000001
+      },
+      "status": "complete",
+      "strength": 34.25,
+      "loss": 0.096,
+      "visible_at": 1
+    },
+    {
+      "id": "t002",
+      "batch": "b0",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.1,
+        "c": 0.6
+      },
+      "status": "complete",
+      "strength": 37.099999999999994,
+      "loss": 0.098,
+      "visible_at": 2
+    },
+    {
+      "id": "t003",
+      "batch": "b0",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.1,
+        "c": 0.5
+      },
+      "status": "complete",
+      "strength": 39.849999999999994,
+      "loss": 0.1,
+      "visible_at": 3
+    },
+    {
+      "id": "t004",
+      "batch": "b1",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.1,
+        "c": 0.4
+      },
+      "status": "complete",
+      "strength": 38.5,
+      "loss": 0.102,
+      "visible_at": 4
+    },
+    {
+      "id": "t005",
+      "batch": "b1",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.1,
+        "c": 0.30000000000000004
+      },
+      "status": "complete",
+      "strength": 41.05,
+      "loss": 0.104,
+      "visible_at": 5
+    },
+    {
+      "id": "t006",
+      "batch": "b1",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.135,
+        "c": 0.765
+      },
+      "status": "complete",
+      "strength": 33.573875,
+      "loss": 0.09820000000000001,
+      "visible_at": 6
+    },
+    {
+      "id": "t007",
+      "batch": "b1",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.135,
+        "c": 0.665
+      },
+      "status": "complete",
+      "strength": 36.558875,
+      "loss": 0.10020000000000001,
+      "visible_at": 7
+    },
+    {
+      "id": "t008",
+      "batch": "b2",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.135,
+        "c": 0.565
+      },
+      "status": "complete",
+      "strength": 35.443875,
+      "loss": 0.10220000000000001,
+      "visible_at": 8
+    },
+    {
+      "id": "t009",
+      "batch": "b2",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.135,
+        "c": 0.46499999999999997
+      },
+      "status": "complete",
+      "strength": 38.228874999999995,
+      "loss": 0.10420000000000001,
+      "visible_at": 9
+    },
+    {
+      "id": "t010",
+      "batch": "b2",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.135,
+        "c": 0.365
+      },
+      "status": "complete",
+      "strength": 40.913875,
+      "loss": 0.1062,
+      "visible_at": 10
+    },
+    {
+      "id": "t011",
+      "batch": "b2",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.135,
+        "c": 0.265
+      },
+      "status": "complete",
+      "strength": 43.498875,
+      "loss": 0.1082,
+      "visible_at": 11
+    },
+    {
+      "id": "t012",
+      "batch": "b3",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.17,
+        "c": 0.73
+      },
+      "status": "complete",
+      "strength": 31.835499999999996,
+      "loss": 0.1024,
+      "visible_at": 12
+    },
+    {
+      "id": "t013",
+      "batch": "b3",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.17,
+        "c": 0.63
+      },
+      "status": "complete",
+      "strength": 34.8555,
+      "loss": 0.1044,
+      "visible_at": 13
+    },
+    {
+      "id": "t014",
+      "batch": "b3",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.17,
+        "c": 0.5299999999999999
+      },
+      "status": "complete",
+      "strength": 37.7755,
+      "loss": 0.10640000000000001,
+      "visible_at": 14
+    },
+    {
+      "id": "t015",
+      "batch": "b3",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.17,
+        "c": 0.42999999999999994
+      },
+      "status": "complete",
+      "strength": 40.5955,
+      "loss": 0.1084,
+      "visible_at": 15
+    },
+    {
+      "id": "t016",
+      "batch": "b4",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.17,
+        "c": 0.32999999999999996
+      },
+      "status": "complete",
+      "strength": 39.3155,
+      "loss": 0.1104,
+      "visible_at": 16
+    },
+    {
+      "id": "t017",
+      "batch": "b4",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.17,
+        "c": 0.23
+      },
+      "status": "complete",
+      "strength": 41.9355,
+      "loss": 0.1124,
+      "visible_at": 17
+    },
+    {
+      "id": "t018",
+      "batch": "b4",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.20500000000000002,
+        "c": 0.6950000000000001
+      },
+      "status": "complete",
+      "strength": 34.084875000000004,
+      "loss": 0.1066,
+      "visible_at": 18
+    },
+    {
+      "id": "t019",
+      "batch": "b4",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.20500000000000002,
+        "c": 0.595
+      },
+      "status": "complete",
+      "strength": 37.139875,
+      "loss": 0.1086,
+      "visible_at": 19
+    },
+    {
+      "id": "t020",
+      "batch": "b5",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.20500000000000002,
+        "c": 0.49499999999999994
+      },
+      "status": "complete",
+      "strength": 36.094875,
+      "loss": 0.1106,
+      "visible_at": 20
+    },
+    {
+      "id": "t021",
+      "batch": "b5",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.20500000000000002,
+        "c": 0.39499999999999996
+      },
+      "status": "complete",
+      "strength": 38.949875,
+      "loss": 0.1126,
+      "visible_at": 21
+    },
+    {
+      "id": "t022",
+      "batch": "b5",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.20500000000000002,
+        "c": 0.295
+      },
+      "status": "complete",
+      "strength": 41.704875,
+      "loss": 0.1146,
+      "visible_at": 22
+    },
+    {
+      "id": "t023",
+      "batch": "b5",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.20500000000000002,
+        "c": 0.195
+      },
+      "status": "complete",
+      "strength": 44.359875,
+      "loss": 0.1166,
+      "visible_at": 23
+    },
+    {
+      "id": "t024",
+      "batch": "b6",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.24000000000000002,
+        "c": 0.66
+      },
+      "status": "complete",
+      "strength": 32.322,
+      "loss": 0.11080000000000001,
+      "visible_at": 24
+    },
+    {
+      "id": "t025",
+      "batch": "b6",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.24000000000000002,
+        "c": 0.56
+      },
+      "status": "complete",
+      "strength": 35.412,
+      "loss": 0.11280000000000001,
+      "visible_at": 25
+    },
+    {
+      "id": "t026",
+      "batch": "b6",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.24000000000000002,
+        "c": 0.45999999999999996
+      },
+      "status": "complete",
+      "strength": 38.402,
+      "loss": 0.11480000000000001,
+      "visible_at": 26
+    },
+    {
+      "id": "t027",
+      "batch": "b6",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.24000000000000002,
+        "c": 0.36
+      },
+      "status": "complete",
+      "strength": 41.292,
+      "loss": 0.11680000000000001,
+      "visible_at": 27
+    },
+    {
+      "id": "t028",
+      "batch": "b7",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.24000000000000002,
+        "c": 0.26
+      },
+      "status": "complete",
+      "strength": 40.082,
+      "loss": 0.1188,
+      "visible_at": 28
+    },
+    {
+      "id": "t029",
+      "batch": "b7",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.24000000000000002,
+        "c": 0.16
+      },
+      "status": "complete",
+      "strength": 42.772,
+      "loss": 0.1208,
+      "visible_at": 29
+    },
+    {
+      "id": "t030",
+      "batch": "b7",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.275,
+        "c": 0.625
+      },
+      "status": "complete",
+      "strength": 34.546875,
+      "loss": 0.115,
+      "visible_at": 30
+    },
+    {
+      "id": "t031",
+      "batch": "b7",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.275,
+        "c": 0.525
+      },
+      "status": "complete",
+      "strength": 37.671875,
+      "loss": 0.117,
+      "visible_at": 31
+    },
+    {
+      "id": "t032",
+      "batch": "b8",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.275,
+        "c": 0.42499999999999993
+      },
+      "status": "complete",
+      "strength": 36.696875000000006,
+      "loss": 0.11900000000000001,
+      "visible_at": 32
+    },
+    {
+      "id": "t033",
+      "batch": "b8",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.275,
+        "c": 0.32499999999999996
+      },
+      "status": "complete",
+      "strength": 39.621875,
+      "loss": 0.121,
+      "visible_at": 33
+    },
+    {
+      "id": "t034",
+      "batch": "b8",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.275,
+        "c": 0.22499999999999998
+      },
+      "status": "complete",
+      "strength": 42.446875000000006,
+      "loss": 0.123,
+      "visible_at": 34
+    },
+    {
+      "id": "t035",
+      "batch": "b8",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.275,
+        "c": 0.125
+      },
+      "status": "complete",
+      "strength": 45.171875,
+      "loss": 0.125,
+      "visible_at": 35
+    },
+    {
+      "id": "t036",
+      "batch": "b9",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.31000000000000005,
+        "c": 0.59
+      },
+      "status": "complete",
+      "strength": 32.7595,
+      "loss": 0.1192,
+      "visible_at": 36
+    },
+    {
+      "id": "t037",
+      "batch": "b9",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.31000000000000005,
+        "c": 0.49
+      },
+      "status": "complete",
+      "strength": 35.919500000000006,
+      "loss": 0.1212,
+      "visible_at": 37
+    },
+    {
+      "id": "t038",
+      "batch": "b9",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.31000000000000005,
+        "c": 0.3899999999999999
+      },
+      "status": "complete",
+      "strength": 38.9795,
+      "loss": 0.1232,
+      "visible_at": 38
+    },
+    {
+      "id": "t039",
+      "batch": "b9",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.31000000000000005,
+        "c": 0.2899999999999999
+      },
+      "status": "complete",
+      "strength": 41.9395,
+      "loss": 0.1252,
+      "visible_at": 39
+    },
+    {
+      "id": "t040",
+      "batch": "b10",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.31000000000000005,
+        "c": 0.18999999999999995
+      },
+      "status": "complete",
+      "strength": 40.7995,
+      "loss": 0.1272,
+      "visible_at": 40
+    },
+    {
+      "id": "t041",
+      "batch": "b10",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.31000000000000005,
+        "c": 0.08999999999999997
+      },
+      "status": "complete",
+      "strength": 43.55950000000001,
+      "loss": 0.1292,
+      "visible_at": 41
+    },
+    {
+      "id": "t042",
+      "batch": "b10",
+      "fractions": {
+        "a": 0.1,
+        "b": 0.34500000000000003,
+        "c": 0.5549999999999999
+      },
+      "status": "pending",
+      "strength": null,
+      "loss": null,
+      "visible_at": 42
+    },
+    {
+      "id": "t043",
+      "batch": "b10",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.34500000000000003,
+        "c": 0.455
+      },
+      "status": "pending",
+      "strength": null,
+      "loss": null,
+      "visible_at": 43
+    },
+    {
+      "id": "t044",
+      "batch": "b11",
+      "fractions": {
+        "a": 0.30000000000000004,
+        "b": 0.34500000000000003,
+        "c": 0.3549999999999999
+      },
+      "status": "pending",
+      "strength": null,
+      "loss": null,
+      "visible_at": 44
+    },
+    {
+      "id": "t045",
+      "batch": "b11",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.34500000000000003,
+        "c": 0.25499999999999995
+      },
+      "status": "pending",
+      "strength": null,
+      "loss": null,
+      "visible_at": 45
+    },
+    {
+      "id": "t046",
+      "batch": "b11",
+      "fractions": {
+        "a": 0.5,
+        "b": 0.34500000000000003,
+        "c": 0.15499999999999997
+      },
+      "status": "failed",
+      "strength": null,
+      "loss": null,
+      "visible_at": 46
+    },
+    {
+      "id": "t047",
+      "batch": "b11",
+      "fractions": {
+        "a": 0.6,
+        "b": 0.34500000000000003,
+        "c": 0.05499999999999999
+      },
+      "status": "failed",
+      "strength": null,
+      "loss": null,
+      "visible_at": 47
+    }
+  ]
+}

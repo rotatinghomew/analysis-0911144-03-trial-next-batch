@@ -1,0 +1,70 @@
+{
+  "constraints": {
+    "total_fraction": 1,
+    "max_cost": 90,
+    "components": [
+      "a",
+      "b",
+      "c"
+    ],
+    "costs": {
+      "a": 2,
+      "b": 5,
+      "c": 1
+    }
+  },
+  "trials": [
+    {
+      "id": "t1",
+      "batch": "b1",
+      "fractions": {
+        "a": 0.3,
+        "b": 0.2,
+        "c": 0.5
+      },
+      "status": "complete",
+      "strength": 40,
+      "loss": 0.12,
+      "visible_at": 1
+    },
+    {
+      "id": "t2",
+      "batch": "b1",
+      "fractions": {
+        "a": 0.4,
+        "b": 0.2,
+        "c": 0.4
+      },
+      "status": "complete",
+      "strength": 44,
+      "loss": 0.13,
+      "visible_at": 2
+    },
+    {
+      "id": "t3",
+      "batch": "b2",
+      "fractions": {
+        "a": 0.2,
+        "b": 0.4,
+        "c": 0.4
+      },
+      "status": "pending",
+      "strength": null,
+      "loss": null,
+      "visible_at": 3
+    },
+    {
+      "id": "t4",
+      "batch": "b2",
+      "fractions": {
+        "a": 0.7,
+        "b": 0.1,
+        "c": 0.2
+      },
+      "status": "failed",
+      "strength": null,
+      "loss": null,
+      "visible_at": 4
+    }
+  ]
+}
