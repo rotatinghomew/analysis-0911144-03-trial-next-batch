@@ -3,6 +3,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlsplit
 
 from .domain import records, summarize
+from .planner import suggest
 from .repository import Conflict
 
 
@@ -26,6 +27,13 @@ def make_server(repository, host='127.0.0.1', port=0):
                     return self.send_json(200, {'status': 'ok'})
                 if parsed.path == '/revisions':
                     return self.send_json(200, {'revisions': repository.history()})
+                if parsed.path == '/plans':
+                    query = parse_qs(parsed.query)
+                    revision = int(query['revision'][0]) if 'revision' in query else None
+                    return self.send_json(200, {'plans': repository.list_plans(revision)})
+                if parsed.path.startswith('/plans/'):
+                    plan_id = int(parsed.path.rsplit('/', 1)[1])
+                    return self.send_json(200, repository.get_plan(plan_id))
                 if parsed.path not in ('/records', '/summary'):
                     return self.send_json(404, {'error': '接口不存在'})
                 query = parse_qs(parsed.query)
@@ -39,7 +47,8 @@ def make_server(repository, host='127.0.0.1', port=0):
                 self.send_json(400, {'error': str(error)})
 
         def do_POST(self):
-            if urlsplit(self.path).path != '/imports':
+            path = urlsplit(self.path).path
+            if path not in ('/imports', '/plans'):
                 return self.send_json(404, {'error': '接口不存在'})
             try:
                 length = int(self.headers.get('Content-Length', '0'))
@@ -48,10 +57,27 @@ def make_server(repository, host='127.0.0.1', port=0):
                 payload = json.loads(self.rfile.read(length))
                 if not isinstance(payload, dict):
                     raise ValueError('请求必须是对象')
-                result = repository.import_data(payload['data'], payload['request_key'])
-                self.send_json(200 if result['replayed'] else 201, result)
+                if path == '/imports':
+                    result = repository.import_data(payload['data'], payload['request_key'])
+                    return self.send_json(200 if result['replayed'] else 201, result)
+                query = parse_qs(urlsplit(self.path).query)
+                revision = int(query['revision'][0]) if 'revision' in query else None
+                snapshot = repository.get(revision)
+                request = payload.get('request', {})
+                if not isinstance(request, dict):
+                    raise ValueError('request 必须是对象')
+                if 'at' not in request or request['at'] is None:
+                    request = dict(request)
+                    request['at'] = max((trial['visible_at'] for trial in snapshot['data']['trials']), default=0)
+                result = suggest(snapshot['data'], request)
+                result['revision'] = snapshot['revision']
+                result['data_digest'] = snapshot['digest']
+                receipt = repository.save_plan(snapshot['revision'], result['request'], result)
+                self.send_json(201, {'revision': snapshot['revision'], 'digest': snapshot['digest'], 'plan': receipt, 'result': result})
             except Conflict as error:
                 self.send_json(409, {'error': str(error)})
+            except LookupError as error:
+                self.send_json(404, {'error': str(error)})
             except (ValueError, KeyError, TypeError, UnicodeError) as error:
                 self.send_json(400, {'error': str(error)})
 

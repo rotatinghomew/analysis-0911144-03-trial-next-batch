@@ -22,8 +22,19 @@ python -m trial_next_batch serve --database /tmp/trial_next_batch.sqlite3 --load
 
 默认监听 127.0.0.1:8080；--host 和 --port 可调整。服务用于可信本地环境，当前不提供公网认证与授权。数据保存在指定 SQLite 文件，重启后仍可按 revision 取回。API 格式见 docs/interfaces.md，业务数据语义见 docs/data-contract.md。
 
+## 下一批试制建议
+
+```sh
+curl -s -X POST 'http://127.0.0.1:8080/plans' -H 'Content-Type: application/json' \
+  -d '{"request": {"n_trials": 2, "cost_budget": 40, "strength_floor": 42, "loss_ceiling": 0.135}}'
+```
+
+建议只使用指定时点可见的完整记录；在途试验不进入拟合，失败试验只作为该区域不可行的证据，同炉次记录按共同误差处理。强度与损耗各自建模，不以任意权重合并成单一分数；有信息价值的边界组合会被标为探索，前沿上的组合会被标为确认。证据不足、成本无法覆盖或底线无解时返回 `no_recommendation` 或 `exploratory_only` 并给出原因。每次建议连同资料版本号与摘要保存，后续导入不会改写历史建议。完整字段与状态见 docs/planning.md。
+
 ## 目录与现有能力
 
 `trial_next_batch/domain.py` 负责资料规则和已有概览；`repository.py` 负责不可变资料版本与导入回执；`service.py` 是服务边界；`client.py` 是独立 HTTP 消费者。fixtures/demo.json 是便于逐项核对的小样本，fixtures/history.json 是同口径的本地合成历史资料。测试覆盖领域规则、版本稳定性及真实 HTTP 往返。
 
 现有概览的解释边界跟随输出的 meaning 或 visibility 字段。原始资料和描述性结果不自动构成推断、优化或对外承诺；调用者应保留版本号和摘要。
+
+`planner.py` 的建议同样有解释边界：预测可行性不等于安全认证，`confirm` 与 `explore` 只是本次试验的用途标签，不是对配方优劣的最终结论。

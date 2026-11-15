@@ -17,3 +17,12 @@ class Client:
 
     def summary(self, revision=None):
         return self.request('/summary' + ('' if revision is None else f'?revision={revision}'))
+
+    def plan(self, request, revision=None):
+        return self.request('/plans' + ('' if revision is None else f'?revision={revision}'), {'request': request})
+
+    def plans(self, revision=None):
+        return self.request('/plans' + ('' if revision is None else f'?revision={revision}'))
+
+    def plan_detail(self, plan_id):
+        return self.request(f'/plans/{plan_id}')

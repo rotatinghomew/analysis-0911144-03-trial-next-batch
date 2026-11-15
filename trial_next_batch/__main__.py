@@ -39,7 +39,15 @@ def main():
                 client = Client(f'http://127.0.0.1:{server.server_port}')
                 data = json.loads(args.fixture.read_text())
                 receipt = client.import_data(data, 'demo')
-                print(json.dumps({'import': receipt, 'summary': client.summary(receipt['revision'])}, ensure_ascii=False, indent=2))
+                plan = client.plan(
+                    {'n_trials': 1, 'cost_budget': data['constraints']['max_cost']},
+                    receipt['revision'],
+                )
+                print(json.dumps({
+                    'import': receipt,
+                    'summary': client.summary(receipt['revision']),
+                    'plan': plan,
+                }, ensure_ascii=False, indent=2))
             finally:
                 server.shutdown()
                 worker.join()
